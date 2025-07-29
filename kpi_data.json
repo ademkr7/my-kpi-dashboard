@@ -1,0 +1,165 @@
+[
+    {
+        "Objectifs": "Commercial - M prp Net",
+        "Column2": "Mobile",
+        "Column3": "M prp Net",
+        "poids": 0.03,
+        "OBJECTIF 2025": 58185,
+        "Réalisation 2025": 32629,
+        "Taux de réalisation": 0.5607802698289938,
+        "score": 0.01682340809486981
+    },
+    {
+        "Objectifs": "Commercial - Production THD",
+        "Column2": "FBB",
+        "Column3": "Production THD",
+        "poids": 0.04,
+        "OBJECTIF 2025": 4782,
+        "Réalisation 2025": 6615,
+        "Taux de réalisation": 1.3833124215809285,
+        "score": 0.05533249686323714
+    },
+    {
+        "Objectifs": "Commercial - MYSTERY",
+        "Column2": "Expérience client",
+        "Column3": "MYSTERY",
+        "poids": 0.02,
+        "OBJECTIF 2025": 75,
+        "Réalisation 2025": 69,
+        "Taux de réalisation": 0.92,
+        "score": 0.0184
+    },
+    {
+        "Objectifs": "Technique - TRD",
+        "Column2": "B2C",
+        "Column3": "TRD",
+        "poids": 0.01,
+        "OBJECTIF 2025": 0.12,
+        "Réalisation 2025": 0.16,
+        "Taux de réalisation": 0.75,
+        "score": 0.0075
+    },
+    {
+        "Objectifs": "Technique - MTTR B2C",
+        "Column3": "MTTR B2C",
+        "poids": 0.02,
+        "OBJECTIF 2025": 60,
+        "Réalisation 2025": 96,
+        "Taux de réalisation": 0.625,
+        "score": 0.0125
+    },
+    {
+        "Objectifs": "Technique - MTTD XDSL",
+        "Column3": "MTTD XDSL",
+        "poids": 0.02,
+        "OBJECTIF 2025": 8,
+        "Réalisation 2025": 14,
+        "Taux de réalisation": 0.5714285714285714,
+        "score": 0.011428571428571429
+    },
+    {
+        "Objectifs": "Technique - MTTDA GPON",
+        "Column3": "MTTDA GPON",
+        "poids": 0.02,
+        "OBJECTIF 2025": 5,
+        "Réalisation 2025": 13,
+        "Taux de réalisation": 0.38461538461538464,
+        "score": 0.007692307692307693
+    },
+    {
+        "Objectifs": "Technique - MTTDA B2B",
+        "Column2": "B2B",
+        "Column3": "MTTDA B2B",
+        "poids": 0.02,
+        "OBJECTIF 2025": 15,
+        "Réalisation 2025": 30,
+        "Taux de réalisation": 0.5,
+        "score": 0.01
+    },
+    {
+        "Objectifs": "Technique - TR8",
+        "Column3": "TR8",
+        "poids": 0.02,
+        "OBJECTIF 2025": 0.8,
+        "Réalisation 2025": 0.73,
+        "Taux de réalisation": 0.9125,
+        "score": 0.01825
+    },
+    {
+        "Objectifs": "Technique - MTTR B2B",
+        "Column3": "MTTR B2B",
+        "poids": 0.02,
+        "OBJECTIF 2025": 8,
+        "Réalisation 2025": 7,
+        "Taux de réalisation": 1.1428571428571428,
+        "score": 0.022857142857142857
+    },
+    {
+        "Objectifs": "Stratégique - Recouvrement pos",
+        "Column2": "Recouvrement",
+        "Column3": "pos",
+        "Column4": 0.42,
+        "poids": 0.0168,
+        "OBJECTIF 2025": 2123,
+        "Réalisation 2025": 669,
+        "Taux de réalisation": 0.13235044747998115,
+        "score": 0.005294017899199246
+    },
+    {
+        "Objectifs": "Stratégique - Recouvrement Jugement",
+        "Column3": "Jugement",
+        "Column4": 0.18,
+        "poids": 0.0072,
+        "OBJECTIF 2025": 2902,
+        "Réalisation 2025": 2115,
+        "Taux de réalisation": 0.1311853893866299,
+        "score": 0.005247415575465196
+    },
+    {
+        "Objectifs": "Stratégique - Recouvrement pv signés",
+        "Column3": "pv signéss",
+        "Column4": 0.16,
+        "poids": 0.0064,
+        "OBJECTIF 2025": 1272,
+        "Réalisation 2025": 928,
+        "Taux de réalisation": 0.11672955974842766,
+        "score": 0.004669182389937107
+    },
+    {
+        "Objectifs": "Stratégique - Rec encaissement",
+        "Column3": "encaissement",
+        "Column4": 0.24,
+        "poids": 0.0096,
+        "OBJECTIF 2025": 872,
+        "Réalisation 2025": 970,
+        "Taux de réalisation": 0.26697247706422017,
+        "score": 0.010678899082568806
+    },
+    {
+        "Objectifs": "Financier - EBITDA",
+        "Column2": "P&L",
+        "Column3": "EBITDA",
+        "poids": 0.24,
+        "OBJECTIF 2025": 40954,
+        "Réalisation 2025": 40957,
+        "Taux de réalisation": 1.000073252917908,
+        "score": 0.24001758070029788
+    },
+    {
+        "Objectifs": "Financier - CA",
+        "Column3": "CA",
+        "poids": 0.3,
+        "OBJECTIF 2025": 96447,
+        "Réalisation 2025": 91722,
+        "Taux de réalisation": 0.951009362655137,
+        "score": 0.2853028087965411
+    },
+    {
+        "Objectifs": "Score Région",
+        "poids": 0.0,
+        "OBJECTIF 2025": 0,
+        "Réalisation 2025": 0,
+        "Taux de réalisation": 0,
+        "score": 0.909858070611572
+    }
+]
