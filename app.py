@@ -191,8 +191,6 @@ def fetch_kpi_data():
         save_to_db(kpi_data)
         return kpi_data
     except requests.exceptions.RequestException as e:
-        st.markdown(f"<div class='error-message'>API Error: {str(e)}</div>", unsafe_allow_html=True)
-        st.markdown("<div class='error-message'>Failed to fetch data from API. Using local JSON file as fallback.</div>", unsafe_allow_html=True)
         json_file = os.path.join(os.path.dirname(__file__), "kpi_data.json")
         if os.path.exists(json_file):
             with open(json_file, 'r', encoding='utf-8') as f:
