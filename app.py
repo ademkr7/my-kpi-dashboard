@@ -15,8 +15,8 @@ st.markdown(
     """
     <style>
         .stApp {
-            background-color: #1a202c;
-            color: white;
+            background-color: #ffffff; /* Pure white background */
+            color: #1a202c; /* Dark gray text for contrast */
             font-size: 2vw;
             padding: 2%;
             height: 100vh;
@@ -25,14 +25,18 @@ st.markdown(
             flex-direction: column;
         }
         .stButton>button {
-            background-color: #4a90e2;
+            background-color: #f59e0b; /* Vibrant orange for buttons */
             color: white;
             font-size: 1.5vw;
             padding: 1% 2%;
             margin-bottom: 1%;
             border: none;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        .stButton>button:hover {
+            background-color: #d97706; /* Darker orange on hover */
         }
         .stTabs, .stExpander {
             display: none;
@@ -48,37 +52,87 @@ st.markdown(
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: rgba(0, 0, 0, 0.05); /* Light gray overlay for content */
+            border-radius: 10px;
+            padding: 1%;
         }
         .score-label {
             text-align: center;
-            color: white;
+            color: #1a202c; /* Dark gray for readability on white */
             font-size: 3vw;
             margin-top: -0.5%;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for text */
         }
         h1 {
             font-size: 3vw;
-            color: #f59e0b;
+            color: #f59e0b; /* Vibrant orange for header */
             text-align: center;
             margin: 0;
             padding: 1% 2%;
             background-color: rgba(245, 158, 11, 0.1);
             border-bottom: 0.3vw solid #f59e0b;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
         hr {
             border: 0.2vw solid #f59e0b;
             margin: 1% 0;
         }
+        .group-title {
+            background-color: #000099; /* Bright blue for group titles */
+            color: white;
+            font-size: 1.4vw;
+            text-align: center;
+            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 0; /* Rounded top edges, flat bottom to align with gauges */
+            width: 49.7%;
+        }
+        .Technique {
+            background-color: #000099; /* Bright blue for group titles */
+            color: white;
+            font-size: 1.4vw;
+            text-align: center;
+            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 0; /* Rounded top edges, flat bottom to align with gauges */
+            width: 66.4%;
+        }
+        .st {
+            background-color: #000099; /* Bright blue for group titles */
+            color: white;
+            font-size: 1.4vw;
+            text-align: center;
+            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 0; /* Rounded top edges, flat bottom to align with gauges */
+            width: 32.7%;
+        }
+        .str {
+            background-color: #000099; /* Bright blue for group titles */
+            color: white;
+            font-size: 1.4vw;
+            text-align: center;
+            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 0; /* Rounded top edges, flat bottom to align with gauges */
+            width: 20.7%;
+        }
         .kpi-title {
-            background-color: #1e90ff;
+            background-color: #2563eb; /* Bright blue for KPI titles */
             color: white;
             font-size: 1.2vw;
             text-align: center;
             padding: 0.5% 1%;
             margin-bottom: 0.5%;
             border-radius: 5px 5px 0 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Ensure full width for consistent alignment */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .subcategory-band {
-            background-color: #1e90ff;
+            background-color: #3b82f6; /* Lighter blue for subcategories */
             color: white;
             font-size: 1.2vw;
             text-align: center;
@@ -89,9 +143,10 @@ st.markdown(
         .error-message {
             font-size: 2vw;
             color: #ff4444;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 1%;
             border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
     </style>
     """,
@@ -219,10 +274,34 @@ if "df" in st.session_state:
                         for _, row in df.iterrows() if pd.notna(row["Objectifs"])]
             save_to_db(kpi_data)
 
-    # Dynamic dashboard layout with row spanning
+    # Dynamic dashboard layout with row spanning and Commercial spanning
     st.markdown("<div class='content'>", unsafe_allow_html=True)
     st.markdown("<h1>Tableau de bord des Indicateurs Clés de Performance (KPIs)</h1>", unsafe_allow_html=True)
     st.markdown("<hr>", unsafe_allow_html=True)
+
+    # Add full-width Commercial spanning for the first two KPIs
+    st.markdown("""
+<div style="display:flex; width:100%;">
+    <div style="flex:1;background-color:#000099; color:white; text-align:center;background-color: #000099; /* Bright blue for group titles */
+            color: white;
+            font-size: 1.4vw;
+            text-align: center;
+            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 0; /* Rounded top edges, flat bottom to align with gauges */
+            width: 45.4%;">Commercial</div>
+    <div style="flex:1; background-color:#000099; color:white; text-align:center;            background-color: #000099; /* Bright blue for group titles */
+            color: white;
+            font-size: 1.4vw;
+            text-align: center;
+                top:0.5%;
+            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            right:5%;
+            border-radius: 5px 5px 0 0; /* Rounded top edges, flat bottom to align with gauges */
+            width: 10.4%;">Technique</div>
+</div>
+""", unsafe_allow_html=True)
 
     current_group = None
     group_positions = []  # Store (row_idx, col_idx, group_title) for each group start
@@ -238,15 +317,42 @@ if "df" in st.session_state:
         subcategory = parts[1] if len(parts) > 1 else kpi_name
 
         gauge_value = min((score / poids * 100) if poids != 0 and score is not None else 0, 100)
-        color = "#17b248" if gauge_value >= 80 else '#ffa500' if gauge_value >= 50 else '#dc143c'
+        color = "#17b248" if gauge_value >= 100 else '#ffa500' if gauge_value >= 80 else '#dc143c'
 
         # Start a new group
-        if current_group != group_title:
+        if current_group != group_title and idx >= 2:  # Apply group logic only after the first two KPIs
             if current_group is not None:
-                # Store the position of the previous group's start
                 group_positions.append((group_start_idx // max_cols, group_start_idx % max_cols, current_group))
             current_group = group_title
             group_start_idx = idx
+
+        # Add full-width Technique spanning for KPIs 4 to 10
+        if 3 <= idx <= 9:
+            if idx == 3:
+                st.markdown("""
+<div style="display:flex; width:101%;">
+    <div style="width:65.7%; background-color:#000099;font-size: 1.4vw;            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 ;color:white; text-align:center;">Technique</div>
+    <div style="width:33.6%; background-color:#000099;font-size: 1.4vw;            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0; color:white; text-align:center;">Stratigique</div>
+</div>
+""", unsafe_allow_html=True)
+
+        # Add full-width B2C spanning for KPIs 
+        if 12 <= idx <= 13:
+            if idx == 12:
+                st.markdown("""
+<div style="display:flex; width:83%;">
+    <div style="width:40%; background-color:#000099;font-size: 1.4vw;            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 ;color:white; text-align:center;">Stratigique</div>
+    <div style="width:40%; background-color:#000099;font-size: 1.4vw;            padding: 0.5%; /* Reduced padding for tighter contact */
+            margin-bottom: 5; /* Removed margin to eliminate gap */
+            border-radius: 5px 5px 0 ;color:white; text-align:center;">Financier</div>
+</div>
+""", unsafe_allow_html=True)
 
         # Manage row and column indices
         if col_idx >= max_cols:
@@ -267,19 +373,19 @@ if "df" in st.session_state:
                        'bgcolor': "white",
                        'borderwidth': 2,
                        'bordercolor': "#2d3748"},
-                number={'valueformat': ".1f", 'suffix': "%", 'font': {'size': 20, 'color': 'black', 'family': 'Arial, sans-serif', 'weight': 'bold'}},
+                number={'valueformat': ".1f", 'suffix': "%", 'font': {'size': 20, 'color': color, 'family': 'Arial, sans-serif', 'weight': 'bold'}},
             ))
             fig.add_annotation(
                 text=f"{score * 100:.1f}%" if score is not None else "0%",
                 xref="paper", yref="paper",
                 x=0.5, y=0.5,
                 showarrow=False,
-                font=dict(size=20, color="black", family="Arial, sans-serif", weight="bold")
+                font=dict(size=20, color=color, family="Arial, sans-serif", weight="bold")
             )
             fig.update_layout(
-                height=150,
-                width=130,
-                margin=dict(l=5, r=5, t=20, b=10),
+                height=120,
+                width=110,
+                margin=dict(l=2, r=2, t=15, b=5),
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
                 showlegend=False
@@ -289,29 +395,37 @@ if "df" in st.session_state:
         col_idx += 1
 
     # Handle the last group
-    if current_group is not None:
+    if current_group is not None and len(kpi_data) > 2:
         group_positions.append((group_start_idx // max_cols, group_start_idx % max_cols, current_group))
 
     # Add regional score dynamically
     if len(rows) > 2 and 5 < max_cols:  # Ensure regional score fits in the last row, column 5
         with rows[2][5]:
             st.markdown("<div class='kpi-title'>Score de la Région</div>", unsafe_allow_html=True)
+            regional_score = 90.33
+            regional_color = "#f59e0b"  # Match the existing gauge bar color
             fig_score = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=90.33,
+                mode="gauge",  # Single score via annotation
+                value=regional_score,
                 domain={'x': [0, 1], 'y': [0, 1]},
                 gauge={'shape': "angular",
                        'axis': {'range': [0, 100], 'visible': False},
-                       'bar': {'color': "#f59e0b", 'thickness': 0.6},
+                       'bar': {'color': regional_color, 'thickness': 0.6},
                        'bgcolor': "white",
                        'borderwidth': 2,
-                       'bordercolor': "#2c5bac"},
-                number={'valueformat': ".2f", 'suffix': "%", 'font': {'size': 20, 'color': 'black', 'family': 'Arial, sans-serif', 'weight': 'bold'}}
+                       'bordercolor': "#131414"},
             ))
+            fig_score.add_annotation(
+                text=f"{regional_score:.2f}%",
+                xref="paper", yref="paper",
+                x=0.5, y=0.5,
+                showarrow=False,
+                font=dict(size=20, color=regional_color, family="Arial, sans-serif", weight="bold")
+            )
             fig_score.update_layout(
-                height=150,
-                width=130,
-                margin=dict(l=5, r=5, t=20, b=10),
+                height=120,  # Match height of other gauges for consistency
+                width=110,   # Match width of other gauges for consistency
+                margin=dict(l=2, r=2, t=15, b=5),  # Consistent margins
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
                 showlegend=False
